@@ -17,6 +17,17 @@ int main() {
 
     // receive commands, and send back the responses
     char buf[256], outbuf[256];
+    char buffer[200];
+    char strings[20];
+
+    int n1 = sprintf(strings, "/myled%d/write %d", 1, 1);
+    strcpy(buffer, strings);
+    RPC::call(buffer, outbuf);
+    n1 = sprintf(strings, "/myled%d/write %d", 3, 1);
+    strcpy(buffer, strings);
+    RPC::call(buffer, outbuf);
+    
+
     while(1) {
         memset(buf, 0, 256);
         for (int i = 0; ; i++) {

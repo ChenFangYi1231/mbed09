@@ -1,6 +1,6 @@
 import serial
 import time
-serdev = '/dev/ttyACM2'
+serdev = '/dev/ttyACM0'
 s = serial.Serial(serdev)
 
 s.write(bytes("\r", 'UTF-8'))
